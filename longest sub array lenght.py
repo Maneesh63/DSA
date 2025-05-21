@@ -18,7 +18,7 @@ def maximum_subarray(arr, k):
     for right in range(len(arr)):
         current_sum += arr[right]
 
-        if current_sum > k:
+        while current_sum > k:
               current_sum -= arr[left]
               left += 1
 
