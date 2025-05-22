@@ -1,9 +1,13 @@
-def move(arr):
-    i = 0
-    for j in range(len(arr)):
-        if arr[j] != 0:
-            arr[i], arr[j] = arr[j], arr[i]
-            i+=1
-    return arr
+def dont_care(arr, k):
+    n = len(arr) % k
+    right = len(arr)-1
+    left = 0
+    while left < right:
+          arr[left], arr[right] = arr[right], arr[left]
+          left += 1
+          right -= 1
 
-print(move([1,2,0,3,0,4,0,5]))
+    return arr
+dont_care()
+arr = [1, 2, 3, 4, 5]
+print(dont_care(arr, 3))
